@@ -206,19 +206,19 @@ This guide walks you through the process of creating your own version of LISF ba
 
 ### 2. Sync with Upstream
 
-Make sure your local repo is up to date with the latest changes from the upstream repository.
+Make sure your local repo is up to date with the latest changes from the upstream repository, here shown for the develop which should be starting point for your development.
 
 ```bash
 git fetch upstream
-git checkout master
-git merge upstream/master
+git checkout develop
+git merge upstream/develop
 ```
 
 ---
 
 ### 3. Create a Working Branch
 
-To start working on your version of LISF:
+To start working on your version of LISF (branching out from develop):
 
 ```bash
 git checkout -b working/<name_of_lis_version>
@@ -228,14 +228,21 @@ git checkout -b working/<name_of_lis_version>
 
 ### 4. Merge Required and Bugfix Branches
 
-Pull in selected branches from upstream as needed.
-Recommended: simply merge the develop branch
+Pull in selected branches from your origin or upstream as needed.
+
+Examples:
 
 ```bash
-git merge upstream/develop
+git merge origin/feature/my_development
 ```
 
-which includes the following branches (no need to execute those lines if you have merged develop)
+or
+
+```bash
+git merge upstream/feature/consolidation_joint_da
+```
+
+FYI, the develop already includes the following branches (no need to execute those lines if you have merged or started from th develop)
 
 ```bash
 git merge upstream/compilation
@@ -247,7 +254,7 @@ git merge upstream/kul_options_sm_da_options
 git merge upstream/fix/ac72_fixes
 ```
 
-The following is only needed if you do the indiviual merges (not when you start directly with develop): For the writeout_bug_multiDAinst you have to solve a conflict. Search for HEAD in lis/dataassim/algorithm/enkf/enkf_Mod.F90.
+The following information is only needed if you do the indiviual merges (not when you start directly with develop): For the writeout_bug_multiDAinst you have to solve a conflict. Search for HEAD in lis/dataassim/algorithm/enkf/enkf_Mod.F90.
 
 Keep those two lines (one line from each two-line block) shown below in which k was replaced and LIS_rc%ensemstype(k) was added, remove HEAD and the lines with <<, >>, and ===)
 
@@ -257,13 +264,7 @@ Keep those two lines (one line from each two-line block) shown below in which k 
 ```
 
 
-### Optional merges (Depending on Use Case)
-
-Now add any additional feature you may need (discuss with supervisor)
-
-```bash
-git merge upstream/feature/XXX
-```
+### Merging with external repositories
 
 Note: You can even add further upstream repositories from other users from which you can merge selected branches, e.g. NoahMP 5 PR from Cenlin He:
 
