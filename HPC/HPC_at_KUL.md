@@ -1,3 +1,10 @@
+> [!NOTE]
+> **Revised up-to-date HPC help page created by Samuel Coveleyn:**  
+> https://gitlab.kuleuven.be/ees/hpc/support/-/wikis/home  
+>
+> Some of the more RSDA-specific aspects can still be found on this page.
+
+
 Get Started on the HPC
 ======================
 
