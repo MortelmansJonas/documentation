@@ -211,22 +211,22 @@ Make sure your local repo is up to date with the latest changes from the upstrea
 ```bash
 git fetch upstream
 git checkout develop
-git merge upstream/develop
 ```
 
 ---
 
 ### 3. Create a Working Branch
 
-To start working on your version of LISF (branching out from develop):
+To start working on your version of LISF (based on the develop):
 
 ```bash
+git checkout develop
 git checkout -b working/<name_of_lis_version>
 ```
 
 ---
 
-### 4. Merge Required and Bugfix Branches
+### 4. Merge Branches to Get Your Working Branch Ready
 
 Pull in selected branches from your origin or upstream as needed.
 
@@ -242,7 +242,7 @@ or
 git merge upstream/feature/consolidation_joint_da
 ```
 
-FYI, the develop already includes the following branches (no need to execute those lines if you have merged or started from th develop)
+FYI, the develop already includes the following branches (no need to execute those lines if you have merged or branched our from the develop)
 
 ```bash
 git merge upstream/compilation
